@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>chapter1</title>
+    <script src="https://cdn.bootcss.com/react/16.8.4/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.8.4/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      // 一个react组件
+      class Tag extends React.Component {
+        constructor() {
+          super();
+          this.state = {
+            value: "5"
+          };
+        }
+        render() {
+          return React.createElement("div", null, this.state.value);
+        }
+      }
+      // createElement生成vdom
+      let vdom = React.createElement(
+        "div",
+        {
+          onClick: function() {
+            console.log("click");
+          }
+        },
+        "这是一个tag",
+        React.createElement(Tag)
+      );
+      // render到页面
+      ReactDOM.render(vdom, document.getElementById("app"));
+    </script>
+  </body>
+</html>
