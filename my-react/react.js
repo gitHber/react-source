@@ -1,5 +1,4 @@
-function createElement(...args){
-  let [type, props, ...children] = args
+function createElement(type, props, ...children){
   let vdom = {
     key: props && props.key,
     type,

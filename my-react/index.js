@@ -12,6 +12,6 @@ class List extends React.Component {
 }
 
 ReactDOM.render(
-  React.createElement("div", null, React.createElement(List)),
+  React.createElement(List, null),
   document.getElementById("app")
 );
